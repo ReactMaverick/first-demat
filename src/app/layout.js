@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "@/components/Header/Header";
 
 const graphik = localFont({
   src: "./fonts-graphik-regular-web.woff2",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${graphik.variable} ${graphik.className} antialiased`}>
+        <Header />
         {children}
       </body>
     </html>
