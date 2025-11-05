@@ -22,7 +22,7 @@
 
 @layer components {
   .custom-container {
-    @apply max-w-[1440px] mx-auto;
+    @apply max-w-[1440px] mx-auto xl:py-[100px] md:py-[50px] py-5;
   }
 }
 
