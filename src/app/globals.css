@@ -10,7 +10,22 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-malay: #ffffff;
+  --font-graphik: var(--font-graphik);
+}
+
+@layer base {
+  h1 {
+    @apply xl:text-[80px];
+  }
+  h2 {
+    @apply text-[32px];
+  }
+}
+
+@layer components {
+  .custom-container {
+    @apply max-w-[1440px] mx-auto;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,5 +38,4 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
