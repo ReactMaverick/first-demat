@@ -8,8 +8,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
   --font-graphik: var(--font-graphik);
 }
 
@@ -25,6 +23,12 @@
 @layer components {
   .custom-container {
     @apply max-w-[1440px] mx-auto;
+  }
+}
+
+@layer utilities {
+  .hero-h1-gradiant {
+    @apply bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent;
   }
 }
 
