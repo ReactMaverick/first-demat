@@ -32,6 +32,7 @@ export default function ProductsSection() {
 
     return (
         <div className='custom-container-padding custom-container'>
+            <h2 className='hero-h1-gradiant py-2'>Products</h2>
             <div className='flex overflow-y-auto'>
                 <div className="flex gap-2">
                     {products.map((product, index) => (
@@ -52,16 +53,18 @@ export default function ProductsSection() {
 
 export function HoverCard({ backImage, title, subDescription, description }) {
     const heightWrapRef = useRef(null);
-    // const 
+    const sliderRef = useRef(null);
 
     const [isHovered, setIsHovered] = useState(false);
     const [percentVisiable, setPercentVisiable] = useState(0);
 
     useEffect(() => {
-        if (heightWrapRef.current) {
-            heightWrapRef.current.style.height = `${heightWrapRef.current.scrollHeight}px`;
+        if (heightWrapRef.current && sliderRef.current) {
+            const height = heightWrapRef.current.offsetHeight;
+            const sliderHeight = sliderRef.current.offsetHeight;
+            setPercentVisiable((height / sliderHeight) * 100);
         }
-    })
+    }, [])
     return (
         <motion.div
             className="relative w-43 h-70 md:w-68 md:h-112 lg:w-86 lg:h-141 overflow-hidden rounded-xl shadow-lg cursor-pointer"
@@ -79,9 +82,10 @@ export function HoverCard({ backImage, title, subDescription, description }) {
 
             {/* Overlay Layer */}
             <motion.div
-                className="absolute bottom-[20%] left-0 w-full h-full bg-black/70 flex flex-col text-white p-4"
+                ref={sliderRef}
+                className="absolute left-0 w-full h-full bg-black/70 flex flex-col text-white p-4 overflow-y-auto"
                 initial={{ y: "100%" }}
-                animate={{ y: isHovered ? "20%" : "100%" }}
+                animate={{ y: isHovered ? "-100%" : `-${percentVisiable + 2}%` }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
             >
                 <div ref={heightWrapRef}>
