@@ -1,10 +1,7 @@
-import Image from "next/image";
+import Home from "@/PageComponents/Home/Home";
 
-export default function Home() {
+export default function page() {
   return (
-    <>
-      <h1 className="hero-h1-gradiant font-[500]">Hello world! <br/> Hola</h1>
-      <h2>Next Js</h2>
-    </>
+    <Home />
   );
 }
