@@ -1,0 +1,1 @@
+export const PRODUCT_BACK1 = "/images/product-back1.jpg"; //product-back1
