@@ -7,8 +7,8 @@ import ProductsSection from "./Components/ProductsSection";
 export default function Home() {
   return (
     <div>
-        <HeaderBottomBar />
-        <HeroSection />
+      <HeaderBottomBar />
+      <HeroSection />
       <ProductsSection />
     </div>
   );
