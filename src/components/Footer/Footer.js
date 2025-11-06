@@ -27,7 +27,7 @@ const Footer = () => {
   const userfullLinks = [
     { name: "Terms of Service", href: "/terms-conditions" },
     { name: "Privacy Policy", href: "/privacy-policy" },
-    { name: "Support", href: "#support" },
+    { name: "Support", href: "/support" },
   ];
 
   const socialLinks = [

@@ -160,7 +160,7 @@ const Header = () => {
       <div className="custom-container py-4 md:py-[18px]">
         <nav className="flex flex-row justify-between items-center">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <Link href={'/'} className="flex-shrink-0">
             <Image
               src={getImgPath("/images/logo/first-demat-logo.png")}
               alt="First Demat Logo Image"
@@ -168,7 +168,7 @@ const Header = () => {
               height={228}
               className="w-[150px] h-[28px] sm:w-[180px] sm:h-[33px] md:w-[220px] md:h-[40px]"
             />
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex px-[48px]">
@@ -222,10 +222,16 @@ const Header = () => {
                     items={platformItems}
                     isMobile={true}
                   />
-                  <li className="py-3 hover:text-primary transition-colors cursor-pointer">
+                  <li
+                    className="py-3 hover:text-primary transition-colors cursor-pointer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
                     <Link href="/pricing">Pricing</Link>
                   </li>
-                  <li className="py-3 hover:text-primary transition-colors cursor-pointer">
+                  <li
+                    className="py-3 hover:text-primary transition-colors cursor-pointer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
                     <Link href="/support">Support</Link>
                   </li>
                   <li className="py-3 hover:text-primary transition-colors cursor-pointer">
