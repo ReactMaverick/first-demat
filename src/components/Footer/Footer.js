@@ -25,8 +25,8 @@ const Footer = () => {
   ];
 
   const userfullLinks = [
-    { name: "Terms of Service", href: "#terms" },
-    { name: "Privacy Policy", href: "#privacy" },
+    { name: "Terms of Service", href: "/terms-conditions" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
     { name: "Support", href: "#support" },
   ];
 
