@@ -223,10 +223,10 @@ const Header = () => {
                     isMobile={true}
                   />
                   <li className="py-3 hover:text-primary transition-colors cursor-pointer">
-                    Pricing
+                    <Link href="/pricing">Pricing</Link>
                   </li>
                   <li className="py-3 hover:text-primary transition-colors cursor-pointer">
-                    Support
+                    <Link href="/support">Support</Link>
                   </li>
                   <li className="py-3 hover:text-primary transition-colors cursor-pointer">
                     Contact us
