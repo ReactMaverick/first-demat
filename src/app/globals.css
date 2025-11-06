@@ -46,6 +46,9 @@
   .hero-h1-gradiant {
     @apply bg-gradient-to-l from-primary to-[#C92B95] bg-clip-text text-transparent;
   }
+  .hero-h1-gradiant-reverse {
+    @apply bg-gradient-to-r from-primary to-[#C92B95] bg-clip-text text-transparent;
+  }
   .custom-container-padding {
     @apply xl:py-[100px] md:py-[50px] py-5;
   }

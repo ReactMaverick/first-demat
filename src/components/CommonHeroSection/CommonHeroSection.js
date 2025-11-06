@@ -1,10 +1,15 @@
 import React from "react";
 
-const CommonHeroSection = ({ backgroundImage, title }) => {
+const CommonHeroSection = ({ backgroundImage, title, backgroundColor = { from: "#E8EAEA", to: "#fcfffe" } }) => {
   console.log("dd", backgroundImage);
 
   return (
-    <section className="bg-[#E8EAEA]">
+    <section 
+      style={{ 
+        background: `linear-gradient(to right, ${backgroundColor.from}, ${backgroundColor.to})`
+      }} 
+      className="w-full"
+    >
       <div
         className={`custom-container custom-container-padding bg-no-repeat bg-cover h-[150px] md:h-[300px] lg:h-[370px] xl:h-[450px] flex items-center`}
         style={{
