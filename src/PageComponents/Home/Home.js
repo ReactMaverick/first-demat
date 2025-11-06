@@ -3,6 +3,8 @@ import React from "react";
 import HeaderBottomBar from "./Components/HeaderBottomBar";
 import HeroSection from "./Components/HeroSection";
 import ProductsSection from "./Components/ProductsSection";
+import CTASection from "./Components/CTASection";
+import TrustedSection from "./Components/TrustedSection";
 
 export default function Home() {
   return (
@@ -10,6 +12,9 @@ export default function Home() {
       <HeaderBottomBar />
       <HeroSection />
       <ProductsSection />
+       <TrustedSection />
+      <CTASection />
+     
     </div>
   );
 }
