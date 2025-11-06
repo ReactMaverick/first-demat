@@ -53,7 +53,7 @@
     @apply xl:py-[100px] md:py-[50px] py-5;
   }
   .primary-button {
-    @apply bg-primary text-white rounded-[200px] py-[15px] px-[30px] font-bold text-[20px] cursor-pointer;
+    @apply bg-primary text-white rounded-[200px] py-[10px] px-[20px] md:py-[12px] md:px-[25px] font-bold text-[16px] md:text-[20px] cursor-pointer;
   }
   .rounded-button {
     @apply bg-primary text-white rounded-full p-[15px] font-bold text-[20px] cursor-pointer;

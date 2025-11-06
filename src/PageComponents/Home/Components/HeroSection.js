@@ -4,7 +4,7 @@ import { Send } from "lucide-react";
 const HeroSection = () => {
   return (
     <section className="bg-white">
-      <div className="custom-container custom-container-padding flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-[20px] px-4 sm:px-6 md:px-8 lg:px-12">
+      <div className="custom-container custom-container-padding flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-[20px]">
         {/* Text Content  */}
         <div className="w-full lg:w-1/2 flex flex-col gap-4 sm:gap-5 lg:gap-[20px] justify-start text-center lg:text-left">
           {/* Heading here */}
