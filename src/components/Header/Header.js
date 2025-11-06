@@ -5,6 +5,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 const DropdownItem = ({ title, items, isMobile = false }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -175,10 +176,10 @@ const Header = () => {
               <DropdownItem title="Products" items={productsItems} />
               <DropdownItem title="Platform" items={platformItems} />
               <li className="hover:text-primary transition-colors cursor-pointer">
-                Pricing
+                <Link href="/pricing">Pricing</Link>
               </li>
               <li className="hover:text-primary transition-colors cursor-pointer">
-                Support
+                <Link href="/support">Support</Link>
               </li>
               <li className="hover:text-primary transition-colors cursor-pointer">
                 Contact us
