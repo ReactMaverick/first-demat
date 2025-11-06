@@ -74,7 +74,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h5 className="text-white font-semibold mb-4">Company</h5>
+            <h6 className="text-white font-medium mb-4">Company</h6>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -91,7 +91,7 @@ const Footer = () => {
 
           {/* Products */}
           <div>
-            <h5 className="text-white font-semibold mb-4">Products</h5>
+            <h6 className="text-white font-medium mb-4">Products</h6>
             <ul className="space-y-3">
               {products.map((link, index) => (
                 <li key={index}>
@@ -108,7 +108,7 @@ const Footer = () => {
 
           {/* Platform */}
           <div>
-            <h5 className="text-white font-semibold mb-4">Platform</h5>
+            <h6 className="text-white font-medium mb-4">Platform</h6>
             <ul className="space-y-3">
               {Platform.map((link, index) => (
                 <li key={index}>
@@ -125,7 +125,7 @@ const Footer = () => {
 
           {/* userfullLinks */}
           <div>
-            <h5 className="text-white font-semibold mb-4">Links</h5>
+            <h6 className="text-white font-medium mb-4">Links</h6>
             <ul className="space-y-3">
               {userfullLinks.map((link, index) => (
                 <li key={index}>
@@ -147,7 +147,7 @@ const Footer = () => {
             <div className="flex items-start gap-3">
               <MapPin size={20} className="text-primary shrink-0 mt-1" />
               <div>
-                <h4 className="text-white font-medium mb-1">Address</h4>
+                <h6 className="text-white font-medium mb-1">Address</h6>
                 <p className="text-sm text-gray-400">
                   123 Finance Street, Business District,<br />
                   Mumbai, Maharashtra 400001
@@ -157,7 +157,7 @@ const Footer = () => {
             <div className="flex items-start gap-3">
               <Phone size={20} className="text-primary shrink-0 mt-1" />
               <div>
-                <h4 className="text-white font-medium mb-1">Phone</h4>
+                <h6 className="text-white font-medium mb-1">Phone</h6>
                 <p className="text-sm text-gray-400">
                   +91 1800 123 4567<br />
                   Mon-Fri: 9:00 AM - 6:00 PM
@@ -167,7 +167,7 @@ const Footer = () => {
             <div className="flex items-start gap-3">
               <Mail size={20} className="text-primary shrink-0 mt-1" />
               <div>
-                <h4 className="text-white font-medium mb-1">Email</h4>
+                <h6 className="text-white font-medium mb-1">Email</h6>
                 <p className="text-sm text-gray-400">
                   support@firstdemat.com<br />
                   info@firstdemat.com
