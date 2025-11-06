@@ -52,6 +52,13 @@
   .primary-button {
     @apply bg-primary text-white rounded-[200px] py-[15px] px-[30px] font-bold text-[20px] cursor-pointer;
   }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 body {

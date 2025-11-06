@@ -1,4 +1,5 @@
 import React from "react";
+import { Send } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -24,17 +25,18 @@ const HeroSection = () => {
             </p>
           </div>
           {/* Email Input and Button */}
-          <div className="border-[1px] border-gray-200 rounded-[100px] flex flex-col sm:flex-row justify-between items-stretch sm:items-center px-2 sm:px-[8px] py-2 sm:py-[6px] gap-2 sm:gap-0">
-            <span className="px-4 sm:px-[16px] py-2 sm:py-[8px] border-b sm:border-b-0 sm:border-r-[1px] border-gray-400 text-center sm:text-left">
+          <div className="border-[1px] border-gray-200 rounded-[100px] flex flex-row justify-between items-stretch sm:items-center px-2 sm:px-[8px] py-2 sm:py-[6px] gap-2 sm:gap-0">
+            <span className="px-4 sm:px-[16px] py-2 sm:py-[8px] border-r-[1px] border-gray-400 text-center sm:text-left">
               +91
             </span>
             <input
               type="email"
-              placeholder="Enter your email"
+              placeholder="Enter Mobile Number"
               className="p-3 outline-none w-full text-sm sm:text-base"
             />
-            <button className="font-semibold bg-primary rounded-[100px] px-4 sm:px-6 py-3 text-nowrap text-white cursor-pointer text-sm sm:text-base hover:bg-blue-700 transition-colors">
-              Get Started
+            <button className="font-semibold bg-primary rounded-[100px] px-4 sm:px-6 py-3 text-nowrap text-white cursor-pointer text-sm sm:text-base hover:bg-blue-700 transition-colors flex items-center justify-center">
+              <span className="hidden sm:inline">Get Started</span>
+              <Send className="sm:hidden" size={18} />
             </button>
           </div>
         </div>
