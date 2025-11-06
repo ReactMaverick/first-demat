@@ -6,6 +6,7 @@ import ProductsSection from "./Components/ProductsSection";
 import WhatDoYouNeed from "./Components/WhatDoYouNeed";
 import CTASection from "./Components/CTASection";
 import TrustedSection from "./Components/TrustedSection";
+import WhyFirstDematSection from "./Components/WhyFirstDematSection";
 
 export default function Home() {
   return (
@@ -14,9 +15,10 @@ export default function Home() {
       <HeroSection />
       <ProductsSection />
       <WhatDoYouNeed />
-       <TrustedSection />
+      <TrustedSection />
+      <WhyFirstDematSection />
       <CTASection />
-     
+
     </div>
   );
 }
