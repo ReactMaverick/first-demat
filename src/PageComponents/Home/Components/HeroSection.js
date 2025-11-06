@@ -18,7 +18,7 @@ const HeroSection = () => {
           </div>
           {/* Paragraph text here */}
           <div>
-            <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed">
               Experience revolutionary trading with AI-powered insights,
               lightning-fast execution, and professional-grade tools designed
               for the modern Indian investor.

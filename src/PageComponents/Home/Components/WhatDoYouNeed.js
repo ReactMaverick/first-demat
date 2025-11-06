@@ -34,7 +34,7 @@ const WhatDoYouNeed = () => {
 
   return (
     <section className="bg-white">
-      <div className="custom-container custom-container-padding flex flex-col gap-8 md:gap-12">
+      <div className="custom-container custom-container-padding flex flex-col gap-[30px]">
         {/* Heading Text */}
         <h2 className="hero-h1-gradiant lg:text-left">
           What Do You Need Help With?
@@ -80,9 +80,9 @@ const WhatDoYouNeed = () => {
                     />
                   </motion.div>
                 )}
-                <h4 className="text-white font-bold leading-tight mt-auto text-wrap">
+                <h5 className="text-white font-bold leading-tight mt-auto text-wrap">
                   {card.title}
-                </h4>
+                </h5>
               </div>
             </motion.div>
           ))}

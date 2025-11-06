@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { PRODUCT_BACK1 } from "@/constants/images";
+import { PRODUCT_BACK1, PRODUCT_BACK2, PRODUCT_BACK3, PRODUCT_BACK4 } from "@/constants/images";
 
 export default function ProductsSection() {
   const products = [
@@ -20,7 +20,7 @@ export default function ProductsSection() {
         "4 critical actions to take now to strengthen your cyber defenses",
       description:
         "Cyber risks are growing faster than ever, outpacing security efforts. How do you get ahead of these threats? In this year’s State of Cybersecurity Resilience, learn the steps to build resilience as you embrace AI transformation.",
-      backGroundImage: PRODUCT_BACK1,
+      backGroundImage: PRODUCT_BACK2,
     },
     {
       title: "Research Report",
@@ -28,7 +28,7 @@ export default function ProductsSection() {
         "4 critical actions to take now to strengthen your cyber defenses",
       description:
         "Cyber risks are growing faster than ever, outpacing security efforts. How do you get ahead of these threats? In this year’s State of Cybersecurity Resilience, learn the steps to build resilience as you embrace AI transformation.",
-      backGroundImage: PRODUCT_BACK1,
+      backGroundImage: PRODUCT_BACK3,
     },
     {
       title: "Research Report",
@@ -36,7 +36,7 @@ export default function ProductsSection() {
         "4 critical actions to take now to strengthen your cyber defenses",
       description:
         "Cyber risks are growing faster than ever, outpacing security efforts. How do you get ahead of these threats? In this year’s State of Cybersecurity Resilience, learn the steps to build resilience as you embrace AI transformation.",
-      backGroundImage: PRODUCT_BACK1,
+      backGroundImage: PRODUCT_BACK4,
     },
   ];
 
@@ -127,9 +127,9 @@ export function HoverCard({ backImage, title, subDescription, description }) {
       >
         <div ref={heightWrapRef}>
           <h6 className="mb-2 font-bold text-base sm:text-lg">{title}</h6>
-          <p className="mb-2 text-sm sm:text-base">{subDescription}</p>
+          <p className="mb-2">{subDescription}</p>
         </div>
-        <p className="text-xs sm:text-sm leading-relaxed">{description}</p>
+        <p className="leading-relaxed">{description}</p>
 
         {/* Close indicator for mobile */}
         {/* {isMobile && isClicked && (
