@@ -45,74 +45,49 @@ const SupportContentSection = () => {
     },
   ];
   return (
-    <section>
-      <div className="custom-container custom-container-padding space-y-6 md:space-y-8 lg:space-y-[30px]">
-        {/* Top Queries section */}
-        <div className="space-y-4 md:space-y-6 lg:space-y-[30px]">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <h2 className="hero-h1-gradiant text-center sm:text-left">Top Support Queries</h2>
-            <button className="primary-button w-full sm:w-auto">My Queries</button>
+    <>
+      {/* Quick links & card  */}
+      <div className="w-2/6">
+        <div className="border-2 border-gray-200 rounded-xl p-4 md:p-6 lg:p-[20px] space-y-4 lg:space-y-[20px]">
+          <h3 className="hero-h1-gradiant pb-3 md:pb-4 lg:pb-[18px] border-b-2 border-b-gray-400 text-center lg:text-left">
+            Quick Links
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-0">
+            {links.map((link, index) => (
+              <Link
+                key={index}
+                href={link.href}
+                className="block py-2 lg:py-[10px] hover:text-primary transition-colors font-[500] text-sm md:text-base text-center lg:text-left"
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
-          <div className="w-full flex items-center justify-between py-2 sm:py-[5px] px-3 sm:px-[8px] border-2 border-gray-400 rounded-[100px]">
-            <input
-              placeholder="Search Queries"
-              className="outline-none w-full text-sm sm:text-base"
-            />
-            <button className="rounded-button flex-shrink-0">
-              <Search size={16} className="sm:w-5 sm:h-5" />
+        </div>
+        {/* Contact Us Card  */}
+        <div
+          className="mt-4 md:mt-6 bg-cover bg-center rounded-xl p-4 md:p-6 text-white relative overflow-hidden"
+          style={{
+            backgroundImage: `url('/images/support-contact-us-background-image.png')`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-[#00133B] to-[#00133B]/60"></div>
+          <div className="relative z-10 text-center lg:text-left">
+            <h5 className="text-lg md:text-xl font-bold mb-3 md:mb-[16px]">Contact Support</h5>
+            <p className="text-white/90 text-xs md:text-sm mb-6 md:mb-[40px]">
+              24/7 Help From Our Support Staff
+            </p>
+            <button className="primary-button flex items-center gap-2 w-full lg:w-auto justify-center lg:justify-start text-sm! md:text-base! text-nowrap">
+              Contact Us
+              <span className="py-1 md:py-[4px] px-1 md:px-[6px] rounded-full bg-white inline-block">
+                <MoveUpRight className="text-primary w-3 h-3 md:w-4 md:h-4" />
+              </span>
             </button>
           </div>
         </div>
-
-        {/* Bottom Support section */}
-        <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-[30px] w-full">
-          {/* Quick links & card  */}
-          <div className="w-full lg:w-[25%] order-2 lg:order-1">
-            <div className="border-2 border-gray-200 rounded-xl p-4 md:p-6 lg:p-[20px] space-y-4 lg:space-y-[20px]">
-              <h3 className="hero-h1-gradiant pb-3 md:pb-4 lg:pb-[18px] border-b-2 border-b-gray-400 text-center lg:text-left">
-                Quick Links
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 lg:gap-0">
-                {links.map((link, index) => (
-                  <Link
-                    key={index}
-                    href={link.href}
-                    className="block py-2 lg:py-[10px] hover:text-primary transition-colors font-[500] text-sm md:text-base text-center lg:text-left"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-            {/* Contact Us Card  */}
-            <div
-              className="mt-4 md:mt-6 bg-cover bg-center rounded-xl p-4 md:p-6 text-white relative overflow-hidden"
-              style={{
-                backgroundImage: `url('/images/support-contact-us-background-image.png')`,
-              }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#00133B] to-[#00133B]/60"></div>
-              <div className="relative z-10 text-center lg:text-left">
-                <h5 className="text-lg md:text-xl font-bold mb-3 md:mb-[16px]">Contact Support</h5>
-                <p className="text-white/90 text-xs md:text-sm mb-6 md:mb-[40px]">
-                  24/7 Help From Our Support Staff
-                </p>
-                <button className="primary-button flex items-center gap-2 w-full lg:w-auto justify-center lg:justify-start text-sm! md:text-base! text-nowrap">
-                  Contact Us
-                  <span className="py-1 md:py-[4px] px-1 md:px-[6px] rounded-full bg-white inline-block">
-                    <MoveUpRight className="text-primary w-3 h-3 md:w-4 md:h-4" />
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
-          {/* Support FAQs  */}
-          <div className="w-full lg:w-[75%] order-1 lg:order-2">
-            <Accordion faqs={faqs} />
-          </div>
-        </div>
       </div>
-    </section>
+    </>
+
   );
 };
 

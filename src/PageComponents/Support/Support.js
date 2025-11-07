@@ -4,13 +4,14 @@ import SupportContentSection from "./Components/SupportContentSection";
 
 const Support = () => {
   return (
-    <div>
-      <CommonHeroSection
+    <>
+      {/* <CommonHeroSection
         title={"Support Portal"}
         backgroundImage={"/images/support-hero-image.jpg"}
-      />
+      /> */}
+      
       <SupportContentSection />
-    </div>
+    </>
   );
 };
 
