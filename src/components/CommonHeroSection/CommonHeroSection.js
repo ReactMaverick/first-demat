@@ -1,8 +1,6 @@
 import React from "react";
 
 const CommonHeroSection = ({ backgroundImage, title, backgroundColor = { from: "#E8EAEA", to: "#fcfffe" } }) => {
-  console.log("dd", backgroundImage);
-
   return (
     <section 
       style={{ 
