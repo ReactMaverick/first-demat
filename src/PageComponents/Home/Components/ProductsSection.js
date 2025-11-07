@@ -41,22 +41,23 @@ export default function ProductsSection() {
   ];
 
   return (
-    <div className="custom-container-padding custom-container">
-      <div className="flex flex-col gap-[30px]">
-        <h2 className="hero-h1-gradiant">Products</h2>
-        <div className="flex overflow-x-auto scrollbar-hide lg:grid lg:grid-cols-4 gap-4 snap-x snap-mandatory">
-          {products.map((product, index) => (
-            <HoverCard
-              key={index}
-              backImage={product.backGroundImage}
-              title={product.title}
-              subDescription={product.subDescription}
-              description={product.description}
-            />
-          ))}
+    <section className="bg-gray-100">
+      <div className="custom-container-padding custom-container">
+        <div className="flex flex-col gap-[30px]">
+          <div className="flex overflow-x-auto scrollbar-hide lg:grid lg:grid-cols-4 gap-4 snap-x snap-mandatory">
+            {products.map((product, index) => (
+              <HoverCard
+                key={index}
+                backImage={product.backGroundImage}
+                title={product.title}
+                subDescription={product.subDescription}
+                description={product.description}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -120,8 +121,8 @@ export function HoverCard({ backImage, title, subDescription, description }) {
               ? "-100%"
               : `-${percentVisiable + 5}%`
             : isHovered
-            ? "-100%"
-            : `-${percentVisiable + 5}%`,
+              ? "-100%"
+              : `-${percentVisiable + 5}%`,
         }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >

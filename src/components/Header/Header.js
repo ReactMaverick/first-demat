@@ -2,7 +2,7 @@
 
 import { getImgPath } from "@/utils/images";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
@@ -117,7 +117,10 @@ const DropdownItem = ({ title, items, isMobile = false }) => {
 };
 
 const Header = () => {
+  const lastScrollY = useRef(0);
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
 
   const productsItems = [
     {
@@ -155,8 +158,23 @@ const Header = () => {
     },
   ];
 
+  // Header scroll animation
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+      lastScrollY.current = currentScrollY;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="bg-white sticky top-0 z-50">
+    <header className={`bg-white sticky top-0 z-50 duration-500 ease-in-out ${showHeader ? "translate-y-0 bg-white" : "-translate-y-full"}`}>
       <div className="custom-container py-4 md:py-[18px]">
         <nav className="flex flex-row justify-between items-center">
           {/* Logo */}
@@ -180,9 +198,6 @@ const Header = () => {
               </li>
               <li className="hover:text-primary transition-colors cursor-pointer">
                 <Link href="/support">Support</Link>
-              </li>
-              <li className="hover:text-primary transition-colors cursor-pointer">
-                Contact us
               </li>
             </ul>
           </div>
@@ -233,9 +248,6 @@ const Header = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <Link href="/support">Support</Link>
-                  </li>
-                  <li className="py-3 hover:text-primary transition-colors cursor-pointer">
-                    Contact us
                   </li>
                 </ul>
                 <button className="primary-button w-full mt-4">Login</button>

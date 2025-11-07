@@ -36,7 +36,7 @@ const WhatDoYouNeed = () => {
     <section className="bg-white">
       <div className="custom-container custom-container-padding flex flex-col gap-[30px]">
         {/* Heading Text */}
-        <h2 className="hero-h1-gradiant lg:text-left">
+        <h2 className="text-primary lg:text-left">
           What Do You Need Help With?
         </h2>
 

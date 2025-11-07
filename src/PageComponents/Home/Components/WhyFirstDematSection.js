@@ -76,7 +76,7 @@ export default function WhyFirstDematSection() {
         <section className='custom-container-padding custom-container'>
             {
                 data.map((item, index) => {
-                    const classString = `${item.gradient} rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-[2.5rem] sticky top-[80px] mb-8 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 max-h-[90vh] overflow-y-auto scrollbar-hide`;
+                    const classString = `${item.gradient} rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl xl:rounded-[2.5rem] sticky top-0 mb-8 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 max-h-[90vh] overflow-y-auto scrollbar-hide`;
                     return (
                         <div key={index} className={classString}>
                             <div className="flex flex-col md:flex-row gap-8 items-center">
