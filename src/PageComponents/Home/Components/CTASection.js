@@ -15,23 +15,23 @@ const CTASection = () => {
           Get support on a large platform, flesh out your first MVP, go from concept to{" "}
           investment, or take your startup to the next level. Our process wraps around your unique business needs.
         </p>
-        <button className="primary-button flex items-center gap-3 mx-auto">
-          <span>Get Started</span>
+        <button className="primary-button flex items-center justify-between gap-3 mx-auto md:px-[10px]!">
+          <p className="font-semibold">Get Started</p>
           <div className="flex items-center -space-x-3">
             <img 
               src={getImgPath("/images/btnuser1.png")} 
               alt="User 1" 
-              className="w-10 h-10 rounded-full border-2 border-white"
+              className="w-8 h-8 rounded-full border-2 border-white"
             />
             <img 
               src={getImgPath("/images/btnuser2.png")} 
               alt="User 2" 
-              className="w-10 h-10 rounded-full border-2 border-white"
+              className="w-8 h-8 rounded-full border-2 border-white"
             />
             <img 
               src={getImgPath("/images/btnuser3.png")} 
               alt="User 3" 
-              className="w-10 h-10 rounded-full border-2 border-white"
+              className="w-8 h-8 rounded-full border-2 border-white"
             />
           </div>
         </button>
