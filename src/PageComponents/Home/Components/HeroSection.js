@@ -9,7 +9,7 @@ const HeroSection = () => {
         <div className="w-full lg:w-5/12 flex flex-col gap-4 sm:gap-5 lg:gap-5 justify-start text-center lg:text-left">
           {/* Heading here */}
           <div>
-            <h1 className="font-bold hero-h1-gradiant text-wrap text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-tight">
+            <h1 className="font-bold hero-h1-gradiant text-wrap text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[70px] leading-tight">
               Trade. Invest. Grow.
             </h1>
             <h4 className="font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl mt-2 sm:mt-3">
