@@ -187,6 +187,47 @@ const TradeCharges = () => {
     },
   };
 
+  const accountOpeningCharges = {
+    headers: ["Type of account", "Charges"],
+    data: [
+      {
+        typeOfAccount: "Online account",
+        charges: "Free",
+      },
+      {
+        typeOfAccount: "Offline account",
+        charges: "Free",
+      },
+      {
+        typeOfAccount: "NRI account (offline only)",
+        charges: "₹500",
+      },
+      {
+        typeOfAccount:
+          "Partnership, LLP, HUF, or Corporate accounts (offline only)",
+        charges: "₹500",
+      },
+    ],
+  };
+
+  const dematAmcCharges = {
+    headers: ["Value of holdings", "AMC"],
+    data: [
+      {
+        valueOfHoldings: "Up to ₹4 lakh",
+        amc: "Free",
+      },
+      {
+        valueOfHoldings: "₹4 lakh - ₹10 lakh",
+        amc: "₹ 100 per year, charged quarterly*",
+      },
+      {
+        valueOfHoldings: "Above ₹10 lakh",
+        amc: "₹ 300 per year, charged quarterly",
+      },
+    ],
+  };
+
   const [activeTab, setActiveTab] = useState("equity");
 
   // Handle tab change on hash change
@@ -210,10 +251,11 @@ const TradeCharges = () => {
 
   return (
     <section>
-      <div className="custom-container custom-container-padding flex flex-col gap-4 md:gap-6 mb-6 md:mb-10">
-        <h4 className="font-bold">Trade Charges</h4>
-
-        <div>
+      <div className="custom-container custom-container-padding flex flex-col gap-4 md:gap-[30px]">
+        {/* Trade Charges */}
+        <div className="flex flex-col gap-[10px]">
+          <h4 className="font-bold">Trade Charges</h4>
+          {/* Tabs  */}
           <div className="flex gap-2 md:gap-4 select-none overflow-x-auto scrollbar-hide">
             {tabs.map((tab) => (
               <h5
@@ -232,70 +274,159 @@ const TradeCharges = () => {
               </h5>
             ))}
           </div>
-        </div>
+          {/*  Table Content */}
+          <div className="overflow-x-auto scrollbar-hide p-[12px] border-2 border-primary/10 rounded-[10px]">
+            <table className="w-full text-left border-collapse min-w-[600px] md:min-w-[800px]">
+              <thead>
+                <tr>
+                  {tableContents[activeTab].headers.map((header, index) => (
+                    <th
+                      key={index}
+                      className="border-b-2 border-gray-300 py-2 md:py-3 px-2 md:px-4 text-xs md:text-sm lg:text-base font-semibold"
+                    >
+                      {header}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {tableContents[activeTab].data.map((item, index) => (
+                  <tr key={index} className="hover:bg-primary/10">
+                    <td className="border-b border-gray-200 py-2 md:py-3 px-2 md:px-4 font-medium text-xs md:text-sm lg:text-base">
+                      {item.chargeType}
+                    </td>
 
-        {/*  Table Content */}
-        <div className="overflow-x-auto scrollbar-hide">
-          <table className="w-full text-left border-collapse min-w-[600px] md:min-w-[800px]">
-            <thead>
-              <tr>
-                {tableContents[activeTab].headers.map((header, index) => (
-                  <th
-                    key={index}
-                    className="border-b-2 border-gray-300 py-2 md:py-3 px-2 md:px-4 text-xs md:text-sm lg:text-base font-semibold"
-                  >
-                    {header}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {tableContents[activeTab].data.map((item, index) => (
-                <tr key={index} className="hover:bg-gray-50">
-                  <td className="border-b border-gray-200 py-2 md:py-3 px-2 md:px-4 font-medium text-xs md:text-sm lg:text-base">
-                    {item.chargeType}
-                  </td>
-
-                  {/* If rate is an object (multi-column), render each value into its own td */}
-                  {typeof item.rate === "object" &&
-                  !Array.isArray(item.rate) ? (
-                    Object.values(item.rate).map((value, i) => (
+                    {/* If rate is an object (multi-column), render each value into its own td */}
+                    {typeof item.rate === "object" &&
+                    !Array.isArray(item.rate) ? (
+                      Object.values(item.rate).map((value, i) => (
+                        <td
+                          key={i}
+                          className="border-b border-gray-200 py-2 md:py-3 px-2 md:px-4 text-xs md:text-sm"
+                        >
+                          {Array.isArray(value) ? (
+                            <ul className="list-disc list-inside space-y-1">
+                              {value.map((subItem, j) => (
+                                <li key={j} className="text-xs md:text-sm">
+                                  {subItem}
+                                </li>
+                              ))}
+                            </ul>
+                          ) : (
+                            value
+                          )}
+                        </td>
+                      ))
+                    ) : (
+                      // Single-column rate: span remaining header columns
                       <td
-                        key={i}
                         className="border-b border-gray-200 py-2 md:py-3 px-2 md:px-4 text-xs md:text-sm"
+                        colSpan={tableContents[activeTab].headers.length - 1}
                       >
-                        {Array.isArray(value) ? (
+                        {Array.isArray(item.rate) ? (
                           <ul className="list-disc list-inside space-y-1">
-                            {value.map((subItem, j) => (
-                              <li key={j} className="text-xs md:text-sm">{subItem}</li>
+                            {item.rate.map((subItem, j) => (
+                              <li key={j} className="text-xs md:text-sm">
+                                {subItem}
+                              </li>
                             ))}
                           </ul>
                         ) : (
-                          value
+                          item.rate
                         )}
                       </td>
-                    ))
-                  ) : (
-                    // Single-column rate: span remaining header columns
-                    <td
-                      className="border-b border-gray-200 py-2 md:py-3 px-2 md:px-4 text-xs md:text-sm"
-                      colSpan={tableContents[activeTab].headers.length - 1}
+                    )}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Charges for account opening */}
+        <div className="flex flex-col gap-[10px]">
+          <h4 className="font-bold">Account Opening Charges</h4>
+          <div className="overflow-x-auto scrollbar-hide p-[12px] border-2 border-primary/10 rounded-[10px]">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr>
+                  {accountOpeningCharges.headers.map((header, index) => (
+                    <th
+                      key={index}
+                      className="border-b-2 border-gray-300 py-2 md:py-3 px-2 md:px-4 text-xs md:text-sm lg:text-base font-semibold"
                     >
-                      {Array.isArray(item.rate) ? (
-                        <ul className="list-disc list-inside space-y-1">
-                          {item.rate.map((subItem, j) => (
-                            <li key={j} className="text-xs md:text-sm">{subItem}</li>
-                          ))}
-                        </ul>
-                      ) : (
-                        item.rate
-                      )}
-                    </td>
-                  )}
+                      {header}
+                    </th>
+                  ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {accountOpeningCharges.data.map((item, index) => (
+                  <tr key={index}>
+                    <td className="border-b border-gray-200 py-2 md:py-3 px-2 md:px-4 font-medium text-xs md:text-sm lg:text-base">
+                      {item.typeOfAccount}
+                    </td>
+                    <td
+                      className={`border-b border-gray-200 py-2 md:py-3 px-2 md:px-4 font-medium text-xs md:text-sm lg:text-base`}
+                    >
+                      <span
+                        className={`${
+                          item.charges.toLowerCase() === "free"
+                            ? "bg-green-500 px-1 py-0.5 text-white"
+                            : ""
+                        } font-bold`}
+                      >
+                        {item.charges}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Demat AMC (Annual Maintenance Charge) */}
+        <div className="flex flex-col gap-[10px]">
+          <h4 className="font-bold">Demat AMC (Annual Maintenance Charge)</h4>
+          <div className="overflow-x-auto scrollbar-hide p-[12px] border-2 border-primary/10 rounded-[10px]">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr>
+                  {dematAmcCharges.headers.map((header, index) => (
+                    <th
+                      key={index}
+                      className="border-b-2 border-gray-300 py-2 md:py-3 px-2 md:px-4 text-xs md:text-sm lg:text-base font-semibold"
+                    >
+                      {header}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {dematAmcCharges.data.map((item, index) => (
+                  <tr key={index}>
+                    <td className="border-b border-gray-200 py-2 md:py-3 px-2 md:px-4 font-medium text-xs md:text-sm lg:text-base">
+                      {item.valueOfHoldings}
+                    </td>
+                    <td
+                      className={`border-b border-gray-200 py-2 md:py-3 px-2 md:px-4 font-medium text-xs md:text-sm lg:text-base`}
+                    >
+                      <span
+                        className={`${
+                          item.amc.toLowerCase() === "free"
+                            ? "bg-green-500 px-1 py-0.5 text-white"
+                            : ""
+                        }`}
+                      >
+                        {item.amc}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
