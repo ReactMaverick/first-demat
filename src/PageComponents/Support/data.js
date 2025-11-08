@@ -1,4 +1,6 @@
 import CAN_OPEN_DEMAT_IF_ALREADY_HAVE_TRADING_COMMODITY_ACCOUNT from "@/constants/Can_open_demat_if_already_have_trading_commodity_account";
+import CAN_OPEN_DEMAT_IF_ALREADY_HAVE_TRADING_COMMODITY_ACCOUNT_OFFLINE from "@/constants/can_open_demat_if_already_have_trading_commodity_account_offline";
+import OPEN_ZERODHA_DEMAT_ACCOUNT_OFFLINE from "@/constants/open_Zerodha_demat_account_offline";
 import OPEN_ZERODHA_DEMAT_ACCOUNT_ONLINE from "@/constants/open_Zerodha_demat_account_online";
 import { CircleUser, User } from "lucide-react";
 
@@ -30,7 +32,7 @@ export const faqTopicsLev3 = {
         {
           question:
             "Can I open a demat account if I already have a trading or commodity account?",
-          linkName: "Can_open_demat_if_already_have_trading_commodity_account",
+          linkName: "can_open_demat_if_already_have_trading_commodity_account",
         },
       ],
     },
@@ -44,7 +46,7 @@ export const faqTopicsLev3 = {
         {
           question:
             "Can I open a demat account if I already have a trading or commodity account?",
-          linkName: "Can_open_demat_if_already_have_trading_commodity_account",
+          linkName: "can_open_demat_if_already_have_trading_commodity_account",
         },
       ],
     },
@@ -160,6 +162,10 @@ export const faqTopicsLev3 = {
 };
 
 export const faqTopicsLev4 = {
-  "open_Zerodha_demat_account_online": OPEN_ZERODHA_DEMAT_ACCOUNT_ONLINE,
-  "Can_open_demat_if_already_have_trading_commodity_account": CAN_OPEN_DEMAT_IF_ALREADY_HAVE_TRADING_COMMODITY_ACCOUNT
+  open_Zerodha_demat_account_online: OPEN_ZERODHA_DEMAT_ACCOUNT_ONLINE,
+  can_open_demat_if_already_have_trading_commodity_account:
+    CAN_OPEN_DEMAT_IF_ALREADY_HAVE_TRADING_COMMODITY_ACCOUNT,
+  open_Zerodha_demat_account_offline: OPEN_ZERODHA_DEMAT_ACCOUNT_OFFLINE,
+  can_open_demat_if_already_have_trading_commodity_account:
+    CAN_OPEN_DEMAT_IF_ALREADY_HAVE_TRADING_COMMODITY_ACCOUNT_OFFLINE,
 };
