@@ -7,9 +7,10 @@ import { ChevronDownIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 function Accordion({
+  defaultValue,
   ...props
 }) {
-  return <AccordionPrimitive.Root data-slot="accordion" {...props} />;
+  return <AccordionPrimitive.Root defaultValue={defaultValue} data-slot="accordion" {...props} />;
 }
 
 function AccordionItem({
