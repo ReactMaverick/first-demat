@@ -48,7 +48,7 @@ export default function layout({ children }) {
                 {/* Bottom Support section */}
                 <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-[30px] w-full">
                     {/* Support FAQs  */}
-                    <div className="w-4/6">
+                    <div className="w-full lg:w-4/6 lg:sticky lg:top-[10%] lg:self-start">
                         <Accordion faqs={faqs} />
                     </div>
                     {children}

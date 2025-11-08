@@ -1,38 +1,37 @@
-import Accordion from '@/components/Accordion/Accordion';
-import { AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+"use client";
+import { AccordionContent, AccordionItem, AccordionTrigger, Accordion } from '@/components/ui/accordion';
 import React from 'react'
 import { faqTopicsLev3 } from '../Support/data';
 import Link from 'next/link';
+import { capitalizeEachFirstLetterURL, textToURL } from '@/lib/utils';
+import { usePathname } from 'next/navigation';
+import BreadCrumb from '@/components/BreadCrumb/BreadCrumb';
 
-export default function SupportLevel3Section({ slug }) {
-    console.log(faqTopicsLev3[slug])
+export default function SupportLevel3Section({ slug, prevlevels, openAccordion = "" }) {
+    const pathName = usePathname();
     return (
-        <div className='w-9/6'>
+        <div className='lg:w-10/6 w-full'>
+            <BreadCrumb home={{ url: "/support", label: "Support" }} prevlevels={prevlevels} slug={slug} />
+            <h5 className='font-semibold my-3'>{capitalizeEachFirstLetterURL(slug)}</h5>
             <Accordion type="single" collapsible>
-                {faqTopicsLev3[slug].map((data, index) => {
-                    console.log(data)
-                    return (
-                        <AccordionItem key={index} className={""} value={`item-${index + 1}`}>
-                            <AccordionTrigger className={"text-xl font-bold"}>
-                                <span>
-                                    {/* <Icon size={30} className="text-primary" /> */}
-                                    <span>{data.key}</span>
-                                </span>
-                            </AccordionTrigger>
-                            <AccordionContent>
-                                <ul className="list-disc list-inside ml-3 text-lg">
-                                    {data.questions?.map((item, index) => {
-                                        return (
-                                            <li key={index} className="text-gray-600 hover:text-primary hover:underline">
-                                                <Link href={"/support/" + item.linkName}>{item.question}</Link>
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
-                            </AccordionContent>
-                        </AccordionItem>
-                    )
-                })}
+                {faqTopicsLev3[slug].map((topic, index) => (
+                    <AccordionItem key={index} value={`item-${index + 1}`}>
+                        <AccordionTrigger className={"text-xl font-bold"}>
+                            <span className='text-slate-800'>{topic.key}</span>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                            <ul className="list-disc list-inside ml-3 text-lg space-y-2">
+                                {topic.questions.map((question, qIndex) => (
+                                    <li key={qIndex} className="text-gray-600 hover:text-primary hover:underline">
+                                        <Link href={`${pathName}/${textToURL(topic.key)}/${question.linkName}`}>
+                                            {question.question}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </AccordionContent>
+                    </AccordionItem>
+                ))}
             </Accordion>
         </div>
     )

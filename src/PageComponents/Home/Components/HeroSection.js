@@ -4,9 +4,9 @@ import { Send } from "lucide-react";
 const HeroSection = () => {
   return (
     <section className="bg-white">
-      <div className="custom-container custom-container-padding items-center flex flex-col lg:flex-row justify-between gap-8 lg:gap-5">
+      <div className="custom-container custom-container-padding flex flex-col lg:flex-row justify-between gap-8 lg:gap-5">
         {/* Text Content  */}
-        <div className="w-full lg:w-4/10 flex flex-col gap-4 sm:gap-5 lg:gap-5 justify-start text-center lg:text-left">
+        <div className="w-full lg:w-5/12 flex flex-col gap-4 sm:gap-5 lg:gap-5 justify-start text-center lg:text-left">
           {/* Heading here */}
           <div>
             <h1 className="font-bold hero-h1-gradiant text-wrap text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] leading-tight">
@@ -42,7 +42,8 @@ const HeroSection = () => {
         </div>
 
         {/* Video Content */}
-        <div className="w-full lg:w-6/10 rounded-2xl flex justify-center mt-8 lg:mt-0">
+        <div className="w-full lg:w-6/12 rounded-2xl flex justify-center mt-8 lg:mt-0">
+          <div>
             <video
               src="https://dl.dropboxusercontent.com/scl/fi/b2a4ezw5fhjout10inue2/Orizon-Showreel-Final-1080p-1.mp4?rlkey=7rbodj2f1ibcw4580uq345dbu&st=3wg9drkv&dl=0"
               autoPlay
@@ -53,6 +54,7 @@ const HeroSection = () => {
             >
               Your browser does not support the video tag.
             </video>
+          </div>
         </div>
       </div>
     </section>
