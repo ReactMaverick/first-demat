@@ -9,7 +9,7 @@ export default function BlogPage({ prevlevels, slug }) {
     return (
         <div className="lg:w-10/6 w-full min-h-screen">
             <BreadCrumb home={{ url: "/support", label: "Support" }} prevlevels={prevlevels} slug={slug} />
-            <div className='bg-gray-100'>
+            <div>
                 {
                     BlogComponent ?
                         <BlogComponent /> :
